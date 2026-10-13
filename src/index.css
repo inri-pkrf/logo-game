@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 206 50% 9%;
+    --foreground: 0 0% 100%;
+    --card: 205 45% 13%;
+    --card-foreground: 0 0% 100%;
+    --popover: 205 45% 13%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 25 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 197 100% 45%;
+    --secondary-foreground: 206 50% 9%;
+    --muted: 205 40% 18%;
+    --muted-foreground: 200 25% 70%;
+    --accent: 197 100% 45%;
+    --accent-foreground: 206 50% 9%;
+    --destructive: 25 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 197 100% 45%;
+    --input: 205 40% 18%;
+    --ring: 197 100% 45%;
+    --radius: 1rem;
+    --font-heading: 'Assistant', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Assistant', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Karantina', 'Assistant', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html, body, #root { height: 100%; }
+  body {
+    font-family: 'Assistant', ui-sans-serif, system-ui, sans-serif;
+    background: #0C1A24;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(13, 40, 77, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 168, 232, 0.20);
+  }
+  .glass-strong {
+    background: rgba(8, 24, 48, 0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(0, 168, 232, 0.24);
+  }
+  .glass-panel {
+    background: linear-gradient(160deg, rgba(13,40,77,0.55) 0%, rgba(12,26,36,0.65) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 168, 232, 0.22);
+  }
+  .grid-bg {
+    background-color: #0C1A24;
+    background-image:
+      linear-gradient(rgba(0,168,232,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,168,232,0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .scanline {
+    background-image: repeating-linear-gradient(0deg, rgba(0,168,232,0.04) 0, rgba(0,168,232,0.04) 1px, transparent 1px, transparent 4px);
+  }
+}
+
+@layer utilities {
+  .glow-cyan { box-shadow: 0 0 22px rgba(0,168,232,0.45), inset 0 0 12px rgba(0,168,232,0.10); }
+  .glow-orange { box-shadow: 0 0 26px rgba(255,107,0,0.55), inset 0 0 14px rgba(255,107,0,0.12); }
+  .glow-soft-cyan { box-shadow: 0 0 14px rgba(0,168,232,0.30); }
+  .text-glow-cyan { text-shadow: 0 0 12px rgba(0,168,232,0.55); }
+  .text-glow-orange { text-shadow: 0 0 12px rgba(255,107,0,0.55); }
+  .text-balance { text-wrap: balance; }
+  .no-touch { touch-action: none; }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,107,0,0.0); }
+  50% { transform: scale(1.03); box-shadow: 0 0 28px 6px rgba(255,107,0,0.35); }
+}
+.animate-breathe { animation: breathe 2.4s ease-in-out infinite; }
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 14px rgba(0,168,232,0.30); }
+  50% { box-shadow: 0 0 30px rgba(0,168,232,0.65); }
+}
+.animate-pulse-ring { animation: pulse-ring 1.8s ease-in-out infinite; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(4px); }
+}
+.animate-shake { animation: shake 0.45s ease-in-out; }
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-reveal { animation: reveal 0.45s ease-out both; }
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.animate-fade-in { animation: fade-in 0.5s ease-out both; }
+
+@keyframes float-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-float-up { animation: float-up 0.6s ease-out both; }
+
+/* Tactical military card borders + corner brackets */
+.tech-border {
+  border: 1px solid rgba(0, 168, 232, 0.25);
+  border-inline-start: 5px solid #FF6B00;
+}
+.tech-border-cyan {
+  border: 1px solid rgba(0, 168, 232, 0.30);
+  border-inline-start: 5px solid #00A8E8;
+}
+.brackets { position: relative; }
+.brackets::before,
+.brackets::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: #00A8E8;
+  border-style: solid;
+  pointer-events: none;
+  opacity: 0.7;
+}
+.brackets::before { top: 10px; left: 10px; border-width: 2px 0 0 2px; }
+.brackets::after { bottom: 10px; right: 10px; border-width: 0 2px 2px 0; }
+
+.glow-green { box-shadow: 0 0 22px rgba(34,197,94,0.5), inset 0 0 12px rgba(34,197,94,0.10); }
+@keyframes shake-subtle {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+.animate-shake-subtle { animation: shake-subtle 0.4s ease-in-out infinite; }
