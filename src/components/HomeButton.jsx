@@ -10,7 +10,7 @@ export default function HomeButton() {
       className="rounded-full overflow-hidden shadow-lg hover:scale-110 transition-transform flex items-center justify-center no-touch"
     >
       <img
-        src="https://media.base44.com/images/public/user_6885e537f90714e91be36212/5d2d4d14b_home-btn.png"
+        src="/images/5d2d4d14b_home-btn.png"
         alt="בית"
         className="w-[70%] h-[70%] object-cover"
         draggable={false}

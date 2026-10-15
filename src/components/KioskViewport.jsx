@@ -32,7 +32,7 @@ export default function KioskViewport({ children }) {
         background: 'radial-gradient(circle at 50% 16%, rgba(0,168,232,0.10), transparent 55%), radial-gradient(circle at 50% 88%, rgba(255,107,0,0.14), transparent 55%)'
       }} />
       <div
-        id="base44-viewport"
+        id="app-viewport"
         className="relative overflow-hidden"
         style={{
           width: VW,

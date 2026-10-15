@@ -7,7 +7,7 @@ import { loadSettings } from '@/lib/storage';
 import { setSoundEnabled } from '@/lib/sound';
 import { useEffect } from 'react';
 
-const HERO = 'https://media.base44.com/images/public/6a3d029621c9609f8df6a4b3/4e677f23b_generated_image.png';
+const HERO = '/images/4e677f23b_generated_image.png';
 
 export default function Splash() {
   const navigate = useNavigate();

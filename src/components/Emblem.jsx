@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const URLS = {
   pikud: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/OrefPikudLogo.svg/250px-OrefPikudLogo.svg.png',
-  college: 'https://media.base44.com/images/public/6a3d029621c9609f8df6a4b3/795772139_.png'
+  college: '/images/795772139_.png'
 };
 
 // Tactical top emblems with live image URLs + graceful fallback.

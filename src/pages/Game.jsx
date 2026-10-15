@@ -21,10 +21,10 @@ function shuffle(arr) {
 }
 
 // Convert screen (client) coords to the local 1080x1920 viewport coordinate
-// space, because #base44-viewport is CSS-scaled and becomes the containing
+// space, because #app-viewport is CSS-scaled and becomes the containing
 // block for absolutely-positioned children.
 function toLocal(clientX, clientY) {
-  const vp = document.getElementById('base44-viewport');
+  const vp = document.getElementById('app-viewport');
   if (!vp) return { x: clientX, y: clientY };
   const r = vp.getBoundingClientRect();
   const s = (r.width / 1080) || 1;
